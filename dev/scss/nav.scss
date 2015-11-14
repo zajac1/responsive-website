@@ -1,0 +1,56 @@
+nav {
+    background-color: $nav-bckg-color;
+    color: $nav-font-color;
+    width: 100%;
+}
+.nav-mobile-caption {
+    display: inline-block;
+    font-size: $nav-font-size;
+    padding: 1rem 0 1rem 2.5rem;
+}
+.nav-menu {
+    background-color: $nav-bckg-color;
+    position: fixed;
+    right: -$mobile-menu-width;
+    top: 0;
+    bottom: 0;
+}
+.nav-menu li {
+    display: block;
+    font-size: $nav-font-size;
+    padding: 4rem 3rem;
+    width: $mobile-menu-width;
+    @include breakpoint("mediumscreen") {
+        font-size: $nav-font-size;
+        padding: 2rem 3rem;
+    }
+}
+
+.hamburger {
+    background-color: #000;
+    float: right;
+    font-size: $nav-font-size;
+    padding: 1rem 1.5rem 1rem 1.5rem;
+}
+.hamburger:hover { cursor: pointer }
+
+@include breakpoint("largescreen") {
+    .nav-mobile-caption,
+    .hamburger {display: none}
+    .nav-menu { 
+        display: inline-block;
+        margin-left: 3rem;
+        position: static;
+    }
+    .nav-menu li {
+        display: inline-block;
+        font-size: $nav-font-size / 1.6;
+        padding: 1.5rem 1rem;
+        text-transform: uppercase;
+        width: auto;
+    }
+}
+.page-animate {
+    transform: translateX(-$mobile-menu-width)
+}
+

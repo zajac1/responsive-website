@@ -1,0 +1,9 @@
+nav {
+  background-color: #373c3f;
+  width: 100%; }
+
+.nav-menu {
+  list-style-type: none; }
+
+.nav-menu li {
+  display: inline-block; }

@@ -1,0 +1,84 @@
+.tile {
+    color: $tile-font-color;
+}
+.tile--main {
+    @include background($tile-main-bckg-color);
+    text-align: justify;
+    padding: 3rem;
+    @include breakpoint("largescreen") {
+        font-size: 2rem;
+    }
+}
+
+.tile--main__subtitle {
+    color: $secondary-title;
+    max-width: 47.5rem;
+    @include breakpoint("largescreen") {
+        max-width: 100%;
+    }
+}
+.tile--main__subtitle:after {
+    content: ">";
+    color: $tile-font-color;
+    float: right;
+}
+.tile--secondary {
+    @include background(#000);
+    color: $secondary-title;
+    display: inline-block;
+    white-space: nowrap;
+    float: left;
+    padding-bottom: 20%;
+    position: relative;
+    width: 80%;
+}
+.tile--secondary__content {
+    position: absolute;
+    font-size: 1.25rem;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+.tile--link {
+    @include square-link;
+}
+.tile--link-main {
+    @include square-link($background-color: #836e96, $length: 100%, $font-size: 3rem);
+}
+
+.square-img {
+    padding-bottom: 25%;
+    background-size: cover;
+}
+.square-img--woman   { background-image: url("img/woman.png")   }
+.square-img--woman2  { background-image: url("img/woman2.png")  }
+.square-img--bridge  { background-image: url("img/bridge.png")  }
+.square-img--bridge2 { background-image: url("img/bridge2.png") }
+@include breakpoint("mediumscreen") {
+    .tile--link-main { 
+        width: 33.3333%;
+        padding-bottom: 33.3333%;
+    }
+}
+.content-tile {
+    background-color: $content-tile-bckg;
+    color: $content-tile-color;
+    padding: 1rem 4rem 4rem 4rem;
+    font-size: 1.5rem;
+}
+.content-tile a {
+    color: $content-tile-links-color;
+}
+.content-tile__column:last-child {
+    display: none
+}
+@include breakpoint("largescreen") {
+    .content-tile__column,
+    .content-tile__column:last-child {
+        display: inline-block;
+    }
+    .content-tile__column {
+        width: 40%;
+        margin: 2.5%;
+      }
+}

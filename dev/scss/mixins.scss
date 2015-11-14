@@ -1,0 +1,39 @@
+@mixin background($background-color)
+{
+    background-color: $background-color;
+    transition: background-color 0.3s;
+
+    @if ($background-color != #000) { 
+        &:hover { background-color: darken($background-color, 10%); 
+        }} 
+    @else {
+        &:hover { background-color: lighten($background-color, 10%) }
+    }
+}
+@mixin square-link($background-color: $tile-link-bckg-color, $color: $tile-font-color, $length: 20%, $font-size: $arrow-link-size)
+{
+    @include background($background-color);
+    color: $color;
+    display: inline-block;
+    float: left;
+    font-weight: bold;
+    height: 0;
+    padding-bottom: $length;
+    position: relative;
+    width: $length;
+
+    &:before {
+        content: ">";
+        position: absolute;
+        font-size: $font-size;
+        @include breakpoint("mediumscreen") {
+            font-size: $font-size * 1.5
+        }
+        @include breakpoint("largescreen") {
+            font-size: $font-size * 2
+        }
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }
+}
