@@ -1,8 +1,11 @@
 {
-  "name": "divanteTest",
+  "name": "responsiveWebsite",
   "version": "0.0.0",
   "description": "",
-  "dependencies": {},
+  "dependencies": {
+    "jquery": "^2.1.4",
+    "slick": "^1.12.2"
+  },
   "devDependencies": {
     "gulp": "~3.8.10",
     "gulp-autoprefixer": "2.0.0",
